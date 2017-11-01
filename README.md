@@ -1,1 +1,1 @@
-# wc
+# wikicity - great app for tourists
