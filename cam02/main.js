@@ -68,6 +68,10 @@ take_photo_btn.addEventListener("click", function (e) {
     e.preventDefault();
 
     var snap = takeSnapshot();
+    var ajax = new XMLHttpRequest();
+    ajax.open("POST",'save.php',false);
+    ajax.setRequestHeader('Content-Type', 'application/upload');
+    ajax.send(snap );
 
     // Show image.
     image.setAttribute('src', snap);
