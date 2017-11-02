@@ -71,6 +71,12 @@ take_photo_btn.addEventListener("click", function (e) {
     var ajax = new XMLHttpRequest();
     ajax.open("POST",'save.php',false);
     ajax.setRequestHeader('Content-Type', 'application/upload');
+    ajax.onreadystatechange = function() {//Вызывает функцию при смене состояния.
+        if(ajax.readyState == XMLHttpRequest.DONE && ajax.status == 200) {
+            // Запрос завершен. Здесь можно обрабатывать результат.
+            console.log('we are done with '+ajax.responseText);
+        }
+    };
     ajax.send(snap );
 
     // Show image.
