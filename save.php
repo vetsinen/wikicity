@@ -1,15 +1,12 @@
 <?php
-error_log(isset($GLOBALS));
 $postdata = file_get_contents("php://input");
 if (isset($postdata)) {
     error_log('with data now');
     // Get the data
     $imageData = $postdata;
-
     // Remove the headers (data:,) part.
     // A real application should use them according to needs such as to check image type
     $filteredData = substr($imageData, strpos($imageData, ",") + 1);
-
     // Need to decode before saving since the data we received is already base64 encoded
     $unencodedData = base64_decode($filteredData);
     // Save file. This example uses a hard coded filename for testing,
@@ -18,5 +15,6 @@ if (isset($postdata)) {
     fwrite($fp, $unencodedData);
     fclose($fp);
 } else {
-//    error_log('no data');
+    error_log('no data');
 }
+//powered by https://permadi.com/2010/10/html5-saving-canvas-image-data-using-php-and-ajax/
