@@ -17,10 +17,10 @@ navigator.getMedia = ( navigator.getUserMedia ||
     navigator.msGetUserMedia);
 
 
-if(!navigator.getMedia){
+if (!navigator.getMedia) {
     displayErrorMessage("Your browser doesn't have support for the navigator.getUserMedia interface.");
 }
-else{
+else {
 
     // Request the camera.
     navigator.getMedia(
@@ -28,7 +28,7 @@ else{
             video: true
         },
         // Success Callback
-        function(stream){
+        function (stream) {
 
             // Create an object URL for the video stream and
             // set it as src of our HTLM video element.
@@ -36,13 +36,13 @@ else{
 
             // Play the video element to start the stream.
             video.play();
-            video.onplay = function() {
+            video.onplay = function () {
                 showVideo();
             };
 
         },
         // Error Callback
-        function(err){
+        function (err) {
             displayErrorMessage("There was an error with accessing the camera stream: " + err.name, err);
         }
     );
@@ -50,10 +50,9 @@ else{
 }
 
 
-
 // Mobile browsers cannot play video without user input,
 // so here we're using a button to start it manually.
-start_camera.addEventListener("click", function(e){
+start_camera.addEventListener("click", function (e) {
 
     e.preventDefault();
 
@@ -64,7 +63,7 @@ start_camera.addEventListener("click", function(e){
 });
 
 
-take_photo_btn.addEventListener("click", function(e){
+take_photo_btn.addEventListener("click", function (e) {
 
     e.preventDefault();
 
@@ -87,7 +86,7 @@ take_photo_btn.addEventListener("click", function(e){
 });
 
 
-delete_photo_btn.addEventListener("click", function(e){
+delete_photo_btn.addEventListener("click", function (e) {
 
     e.preventDefault();
 
@@ -105,8 +104,7 @@ delete_photo_btn.addEventListener("click", function(e){
 });
 
 
-
-function showVideo(){
+function showVideo() {
     // Display the video stream and the controls.
 
     hideUI();
@@ -115,7 +113,7 @@ function showVideo(){
 }
 
 
-function takeSnapshot(){
+function takeSnapshot() {
     // Here we're using a trick that involves a hidden canvas element.
 
     var hidden_canvas = document.querySelector('canvas'),
@@ -139,9 +137,9 @@ function takeSnapshot(){
 }
 
 
-function displayErrorMessage(error_msg, error){
+function displayErrorMessage(error_msg, error) {
     error = error || "";
-    if(error){
+    if (error) {
         console.log(error);
     }
 
@@ -152,7 +150,7 @@ function displayErrorMessage(error_msg, error){
 }
 
 
-function hideUI(){
+function hideUI() {
     // Helper function for clearing the app UI.
 
     controls.classList.remove("visible");

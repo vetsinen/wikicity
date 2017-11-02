@@ -8,7 +8,9 @@
     <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
     <meta http-equiv="pragma" content="no-cache" />
     <title>Demo: Take a Selfie With JavaScript</title>
-    <link rel="stylesheet" href="main.css" type="text/css">
+<!--    <link rel="stylesheet" href="main.css" type="text/css">-->
+    <link rel="stylesheet" type="text/css" href="main.css?<?php echo date('l jS \of F Y h:i:s A'); ?>" />
+
 </head>
 <body>
 <div class="container">
