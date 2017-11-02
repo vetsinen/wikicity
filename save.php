@@ -11,7 +11,8 @@ if (isset($postdata)) {
     $unencodedData = base64_decode($filteredData);
     // Save file. This example uses a hard coded filename for testing,
     // but a real application can specify filename in POST variable
-    $fp = fopen('test.png', 'wb');
+    $fn = str_pad(rand(1,PHP_INT_MAX), 19, '0', STR_PAD_LEFT).'.png';
+    $fp = fopen($fn, 'wb');
     fwrite($fp, $unencodedData);
     fclose($fp);
 } else {
