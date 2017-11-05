@@ -13,7 +13,7 @@ if (isset($imageData)) {
     // Save file. This example uses a hard coded filename for testing,
     // but a real application can specify filename in POST variable
     $fn = str_pad(rand(1,PHP_INT_MAX), 19, '0', STR_PAD_LEFT);
-    $fullpath =__DIR__ .'/'.$fn.'.png';
+    $fullpath =__DIR__ .'/imgs/'.$fn.'.png';
     error_log($fullpath);
     $fp = fopen($fullpath, 'wb');
     fwrite($fp, $unencodedData);

@@ -69,15 +69,19 @@ take_photo_btn.addEventListener("click", function (e) {
 
     var snap = takeSnapshot();
     var ajax = new XMLHttpRequest();
-    ajax.open("POST",'save.php',false);
+    ajax.open("POST", 'save-img.php', false);
     ajax.setRequestHeader('Content-Type', 'application/upload');
-    ajax.onreadystatechange = function() {//Вызывает функцию при смене состояния.
-        if(ajax.readyState == XMLHttpRequest.DONE && ajax.status == 200) {
+    ajax.onreadystatechange = function () {//Вызывает функцию при смене состояния.
+        if (ajax.readyState == XMLHttpRequest.DONE && ajax.status == 200) {
             // Запрос завершен. Здесь можно обрабатывать результат.
-            console.log('we are done with '+ajax.responseText);
+            console.log('we are done with ' + ajax.responseText);
+            fetch('/save-item.php?descr=' + encodeURIComponent('и еще описание')+'&id='+ajax.responseText)
+                .then((resconce) => {
+                    console.log('descr sended');
+                });
         }
     };
-    ajax.send(snap );
+    ajax.send(snap);
 
     // Show image.
     image.setAttribute('src', snap);
