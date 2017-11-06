@@ -5,6 +5,7 @@ class Storage
     private $file_name = 'db.json';
     public $storage = [];
 
+
     function __construct()
     {
         $s = file_get_contents($this->file_name);

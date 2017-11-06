@@ -6,7 +6,10 @@ var video = document.querySelector('#camera-stream'),
     take_photo_btn = document.querySelector('#take-photo'),
     delete_photo_btn = document.querySelector('#delete-photo'),
     download_photo_btn = document.querySelector('#download-photo'),
-    error_message = document.querySelector('#error-message');
+    descr_submit = document.querySelector("#descr_submit"),
+    error_message = document.querySelector('#error-message'),
+
+    picid;
 
 
 // The getUserMedia interface is used for handling camera input.
@@ -74,11 +77,10 @@ take_photo_btn.addEventListener("click", function (e) {
     ajax.onreadystatechange = function () {//Вызывает функцию при смене состояния.
         if (ajax.readyState == XMLHttpRequest.DONE && ajax.status == 200) {
             // Запрос завершен. Здесь можно обрабатывать результат.
-            console.log('we are done with ' + ajax.responseText);
-            fetch('/save-item.php?descr=' + encodeURIComponent('и еще описание')+'&id='+ajax.responseText)
-                .then((resconce) => {
-                    console.log('descr sended');
-                });
+            picid = ajax.responseText;
+            console.log('we are done with ' + picid);
+            descr_div.scrollIntoView();
+            document.getElementById("descr_input").focus();
         }
     };
     ajax.send(snap);
@@ -115,6 +117,17 @@ delete_photo_btn.addEventListener("click", function (e) {
     // Resume playback of stream.
     video.play();
 
+});
+
+descr_submit.addEventListener("click", function (e){
+    const descriptionForPhoto = document.querySelector("#descr_input").value;
+    console.log('descr gotten '+ descriptionForPhoto);
+    if (descriptionForPhoto){
+        fetch('/save-item.php?descr=' + encodeURIComponent(descriptionForPhoto)+'&id='+picid)
+            .then((resconce) => {
+                console.log('descr sended');
+            });
+    }
 });
 
 

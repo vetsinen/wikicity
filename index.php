@@ -25,19 +25,21 @@
         <div class="controls">
             <a href="#" id="delete-photo" title="Delete Photo" class="disabled"><i class="material-icons">delete</i></a>
             <a href="#" id="take-photo" title="Take Photo"><i class="material-icons">camera_alt</i></a>
-            <a href="#" id="download-photo" download="selfie.png" title="Save Photo" class="disabled"><i
-                        class="material-icons">file_download</i></a>
+            <a href="#" id="download-photo" download="selfie.png" title="Save Photo" class="disabled"><i class="material-icons">file_download</i></a>
         </div>
         <!-- Hidden canvas element. Used for taking snapshot of video. -->
         <canvas></canvas>
     </div>
 </div>
-<div style="text-align: center;">
-    <label for="input_box">Input: </label><input type="text" id="input_box" name="input_box" style="margin: 0 auto;
-    text-align: left; font-size:40px;" />
+<div id="descr_div" style="text-align: center; ">
+    <input type="text" id="descr_input" placeholder="your cool description" name="descr_input" style="margin: 0 auto;
+    text-align: center; font-size:40px;"/>
+    <button id="descr_submit" style="font-size:40px;">add description</button>
 </div>
+<script src="jquery.min.js"></script>
 <script src="main.js"></script>
 <h3>Demo: Grab a wikiobject With JavaScript</h3>
 <!--powered by https://jsfiddle.net/dannymarkov/cuumwch5/-->
+<?php include_once "wikilist.php"; ?>
 </body>
 </html>
