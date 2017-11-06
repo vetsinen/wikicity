@@ -119,11 +119,11 @@ delete_photo_btn.addEventListener("click", function (e) {
 
 });
 
-descr_submit.addEventListener("click", function (e){
+descr_submit.addEventListener("click", function (e) {
     const descriptionForPhoto = document.querySelector("#descr_input").value;
-    console.log('descr gotten '+ descriptionForPhoto);
-    if (descriptionForPhoto){
-        fetch('/save-item.php?descr=' + encodeURIComponent(descriptionForPhoto)+'&id='+picid)
+    console.log('descr gotten ' + descriptionForPhoto);
+    if (descriptionForPhoto) {
+        fetch('/save-item.php?descr=' + encodeURIComponent(descriptionForPhoto) + '&id=' + picid)
             .then((resconce) => {
                 console.log('descr sended');
             });
