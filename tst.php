@@ -1,12 +1,15 @@
 <?php
+
+
 require_once 'storage.php';
 $s = new Storage();
+var_dump($s::$storage);
 //$s->storage = [];
 //$s->save();$s->save();
-//$s->storage["0268926061524287489"]="мужик с тортом";
+//$s::$storage["0268926061524287489"]="товарищ с коробкой";
 //$s->save();
-var_dump($s->storage);
-include_once "wikilist.php";
+
+//include_once "wikilist.php";
 //$s->storage['23232323']=44;
 //$s->save();
 

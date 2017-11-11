@@ -7,7 +7,10 @@
     <meta http-equiv="expires" content="0"/>
     <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT"/>
     <meta http-equiv="pragma" content="no-cache"/>
-    <title>Demo: Take a Selfie With JavaScript</title>
+    <meta charset="utf-8">
+    <!-- Bootstrap CSS -->
+<!--    <link rel="stylesheet" href="bootstrap.min.css">-->
+    <title>Take a WikiObject With JavaScript</title>
     <!--    <link rel="stylesheet" href="main.css" type="text/css">-->
     <link rel="stylesheet" type="text/css" href="main.css?<?php echo date('l jS \of F Y h:i:s A'); ?>"/>
 
@@ -38,8 +41,7 @@
 </div>
 <script src="jquery.min.js"></script>
 <script src="main.js"></script>
-<h3>Demo: Grab a wikiobject With JavaScript</h3>
 <!--powered by https://jsfiddle.net/dannymarkov/cuumwch5/-->
-<?php include_once "wikilist.php"; ?>
+<?php include_once "items.php"; ?>
 </body>
 </html>

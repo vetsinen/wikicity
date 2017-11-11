@@ -1,10 +1,18 @@
-<?php
-require_once "storage.php";
-$s = new Storage();
-if (count($s->storage) > 0) {
-    echo '<br><h2>here are such places</h2><ul>';
-    foreach ($s->storage as $id => $item) {
-        echo '<li>' . '<a href="item.php?item=' . $id . '">' . $item . '</a>' . '</li>';
-    }
-    echo '</ul>';
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>List of wikicity objects</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+<div class="container-fluid">
+<?php include "items.php"; ?>
+</div>
+
+</body>
+</html>
+
