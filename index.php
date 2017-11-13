@@ -17,7 +17,7 @@
 </head>
 <body>
 <div class="container">
-    <div class="app">
+    <div class="app" style="display: ">
 
         <a href="#" id="start-camera" class="visible">Touch here to start the app.</a>
         <video id="camera-stream"></video>
@@ -33,12 +33,21 @@
         <!-- Hidden canvas element. Used for taking snapshot of video. -->
         <canvas></canvas>
     </div>
+    <div id="upload">
+        <form action="gen.php" method="post" enctype="multipart/form-data">
+            or upload an image:
+            <input type="file" name="fileToUpload" id="fileToUpload">
+        </form>
+    </div>
+
+    <div id="descr_div" style="text-align: center; ">
+        <input type="text" id="descr_input" placeholder="your cool description" name="descr_input" style="margin: 0 auto;
+    text-align: center"/><br/>
+        <button id="descr_submit">create cityobject</button>
+    </div>
 </div>
-<div id="descr_div" style="text-align: center; ">
-    <input type="text" id="descr_input" placeholder="your cool description" name="descr_input" style="margin: 0 auto;
-    text-align: center; font-size:40px;"/><br/>
-    <button id="descr_submit" style="font-size:40px;">add description</button>
-</div>
+
+
 <script src="jquery.min.js"></script>
 <script src="main.js"></script>
 <!--powered by https://jsfiddle.net/dannymarkov/cuumwch5/-->

@@ -13,6 +13,11 @@ html{
     color: #333;
 }
 
+html *
+{
+    font-size: 36px !important;
+}
+
 h3{
     font: normal 32px/1.5 'Open Sans', sans-serif;
     color: #2c3e50;
